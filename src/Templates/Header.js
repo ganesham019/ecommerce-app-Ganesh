@@ -3,10 +3,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Logo from "../../src/Images/Logo.png";
 
-import {useSelector,useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 function Header() {
-  const dispatch = useDispatch();
-
   const cartStore = useSelector(state=>state.cart);
   const {
     cartsummary

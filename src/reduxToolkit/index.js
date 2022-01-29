@@ -1,7 +1,6 @@
-import {combineReducers } from '@reduxjs/toolkit';
-import cartReducer from  './reducer/cart';
+import { combineReducers } from "@reduxjs/toolkit";
+import cartReducer from "./reducer/cart";
 const rootReducer = combineReducers({
-  cart:cartReducer
+  cart: cartReducer,
 });
-export default rootReducer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-
+export default rootReducer;

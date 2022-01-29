@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Star from "../../Images/Star.png";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
+
 function BestSeller() {
   const [Seller, setBestSeller] = useState();
   const [Visible, setVisible] = useState(8);

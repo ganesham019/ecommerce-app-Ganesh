@@ -14,7 +14,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 import { useDispatch } from "react-redux";
 // import { addCart } from "../../redux/action/index";
-import { addTocart, productAdd  } from "../../reduxToolkit/reducer/cart";
+import {  productAdd  } from "../../reduxToolkit/reducer/cart";
 function ProductList() {
   // const urlPath = useLocation();
 

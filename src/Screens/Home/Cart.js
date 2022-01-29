@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -11,13 +11,6 @@ function Cart() {
   const cartStore = useSelector((state) => state.cart);
   const { cart } = cartStore;
 
-  const [counts, setQuantity] = useState([]);
-
-  const decQuantity = () => {
-    if (counts > 1) {
-      setQuantity(counts - 1);
-    }
-  };
   const modifyCartItemCountfunc = (count, index) => {
     dispatch(modifyCartItemCount({ index: index, count: count }));
   };

@@ -3,9 +3,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const productAdd = createAsyncThunk("cart/productAdd", async (data) => {
   return data;
 });
-export const AddTotalPrice = createAsyncThunk("cart/AddTotalPrice", async (data) => {
-  return data;
-});
 
 export const modifyCartItemCount = createAsyncThunk(
   "cart/modifyCartItemCount",
@@ -57,15 +54,6 @@ const cartSclice = createSlice({
       state.cartsummary.itemCount += action.payload.count;
     });
  
-    builder.addCase(AddTotalPrice.fulfilled, (state, action) => {
-      console.log(action.payload);
-      state.cart.push({
-        pid: action.payload.pid,
-        count: action.payload.count,
-        price: action.payload.price,
-      });
-      state.cartsummary.totalAmount =action.payload.price * action.payload.count;
-    });
 
     builder.addCase(modifyCartItemCount.fulfilled, (state, action) => {
       console.log(action.payload);

@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AddTotalPrice } from "../../reduxToolkit/reducer/cart";
+import React from "react";
+import { useSelector } from "react-redux";
+
 
 function Checkout() {
-  const dispatch = useDispatch();
+
   const cartStore = useSelector((state) => state.cart);
   const { cart } = cartStore;
 
-  let totalPrice = 0;
+  
+
   return (
     <>
       {cart.map((data, index) => {
@@ -15,6 +16,7 @@ function Checkout() {
           <>
             <div>
               <div class="container">
+                
                 <div class="col-sm-8 mx-auto text-center ">
                   <div className="row text-center">
                     <div className="col ">
@@ -39,13 +41,11 @@ function Checkout() {
                         <h4>Price</h4>
                         {data.price}{" "}
                       </span>
-
-                      <span
-                        className="btn btn-default "
-                        onClick={() => dispatch(AddTotalPrice(data.count , data.price))}
-                      >
-                          {data.AddTotalPrice}
+                      <span>
+                        <h4 >Total Price</h4>
+                       
                       </span>
+                      
                     </div>
                   </div>
                 </div>
@@ -54,6 +54,7 @@ function Checkout() {
           </>
         );
       })}
+      console.log('')
     </>
   );
 }
