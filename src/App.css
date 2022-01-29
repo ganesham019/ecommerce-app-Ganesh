@@ -1,0 +1,207 @@
+.App {
+  font-family: "Poppins", sans-serif;
+}
+.Text1 {
+  position: absolute;
+  top: 5%;
+  width: 178px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #223263;
+}
+.Text2 {
+  position: absolute;
+  bottom: 12%;
+  left: 26%;
+  width: 150px;
+  font-size: 18px;
+  font-weight: regular;
+  color: #223263;
+  text-align: center;
+}
+.Text3 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 120px;
+  font-size: 23px;
+  font-weight: bold;
+  color: #40bfff;
+}
+.HotProducts {
+  margin-top: -7%;
+}
+.ShopNow{
+  background-color: #40BFFF;
+ 
+}
+.ShopText{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.ShopText1{
+  font-size:55px;
+  color: white;
+  font-weight: medium;
+  width: 600px;
+}
+.ShopText2{
+  font-size:20px;
+  color: white;
+  font-weight: medium;
+}
+.ShopText3{
+  font-size:22px;
+  color: white;
+  font-weight: medium;
+  border-bottom: 2px solid white;
+  width:120px;
+}
+.PText1{
+  font-size: 25px;
+  font-weight:medium;
+}
+.LNText{
+  font-size:38px;
+  font-weight:medium;
+  text-transform: uppercase;
+}
+.LnText2{
+  font-size:18px;
+  font-weight:bold;
+}
+.BSText1{
+  font-size:16px;
+  font-weight:bold;
+  color:#223263;
+  text-decoration: none;
+}
+.BSText2{
+  font-size:15px;
+  font-weight:bold;
+  color:#40BFFF;
+  text-decoration: none;
+}
+.BSText3{
+  color:lightgray;
+  font-weight: lighter;
+}
+.BSText4{
+
+  font-weight: bold;
+}
+.BSText1:hover{
+text-decoration: none;
+}
+/* .CardProduct:hover{
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+.middle {
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: #146188;
+  font-size: 35px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+ .profile-pic:hover .im {
+  /* opacity: 0.5; */
+  transform:  scale(0.96);
+  transition:all 0.9s;
+} 
+
+.profile-pic:hover .middle {
+  opacity: 1;
+}
+.LoadMore{
+  background-color: transparent;
+  border:none;
+  border-bottom: 2px solid #146188;
+}
+/* .ColorFlex span{
+  height: 30px;
+ 
+} */
+.ColorCircle{
+  display: inline-block;
+  height: 22px;
+    width: 22px;
+text-align: center;
+font-size:14px;
+background-color: rgb(209, 212, 212);
+    border-radius: 10%;
+    cursor: pointer;
+}
+.ColorCircle1{
+  display: inline-block;
+  height: 20px;
+    width: 20px;
+    background-color: rgb(22, 177, 224);
+  cursor: pointer;
+    border-radius: 50%;
+}
+.ColorCircle2{
+  display: inline-block;
+  height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: rgb(0, 255, 55);
+    border-radius: 50%;
+}
+.ColorCircle3{
+display: inline-block;
+height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-color: rgb(224, 19, 30);
+  border-radius: 50%;
+}
+.ColorCircle4{
+  display: inline-block;
+  height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: rgb(0, 60, 255);
+    border-radius: 50%;
+}
+.ADCT{
+  font-size:16px;
+  color:#33A0FF;
+  background-color:#33a0ff69;
+  align-items: center;
+  cursor: pointer;
+}
+.bgSocial{
+  background-color:#385C8E;
+  color:white;
+  width:300px;
+  cursor: pointer;
+}
+.bgSocial2{
+  background-color:#03A9F4;
+  color:white;
+  width:300px;
+  cursor: pointer;
+}
+.FooterText{
+  color:black;
+  font-size:18px;
+  font-weight:bold;
+}
+.FooterText2{
+  color:black;
+  font-size:12px;
+  width:190px;
+}
+.FooterText3{
+  color:black;
+  font-size:12px;
+  width:140px;
+}
