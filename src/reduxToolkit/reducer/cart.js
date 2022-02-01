@@ -83,7 +83,6 @@ const cartSlice = createSlice({
       state.cart = state.cart.filter(
         (element, index) => index !== action.payload);
       state.cartsummary.itemCount -= 1;
-     
     });
 
     builder.addCase(deleteProduct.fulfilled, (state, action) => {
@@ -109,4 +108,5 @@ const cartSlice = createSlice({
 
 // export const { addTocart, testFunc } = cartSlice.actions;
 
+// export default cartSlice;
 export default cartSlice.reducer;
