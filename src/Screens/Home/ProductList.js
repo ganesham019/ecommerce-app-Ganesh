@@ -10,7 +10,6 @@ import {
   AiOutlineHeart,
 } from "react-icons/ai";
 
-
 import { useDispatch } from "react-redux";
 import { productAdd } from "../../reduxToolkit/reducer/cart";
 
@@ -126,9 +125,9 @@ function ProductList() {
             </div>
             <div className="d-flex flex-direction-column  mt-4">
               <div className="row">
-                <div className="col-md-6 m-0 p-0">
+                <div className="col m-0 p-0">
                   <div className="row m-0 p-0">
-                    <div className="col ml-1 p-2 card border-1">
+                    {/* <div className="col ml-1 p-2 card border-1">
                       <img src={Seller.image} class="img-fluid " alt="" />
                     </div>
                     <div className="col ml-1 p-2 card border-1">
@@ -139,12 +138,97 @@ function ProductList() {
                     </div>
                     <div className="col ml-1 p-2 card border-1">
                       <img src={Seller.image} class="img-fluid " alt="" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-12 text-center">
                   <div className="row mt-5 justify-content-center content-align-center align-items-center">
-                    <div className="col">
+                    <div className="Aligns text-center">
+                      <span>
+                        <AiOutlineMinus
+                          className=" ml-auto border p-2"
+                          onClick={() => decQuantity()}
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            cursor: "pointer",
+                          }}
+                        />
+                      </span>
+                      <span
+                        className="border ml-auto p-2"
+                        style={{ width: "40px", height: "40px" }}
+                      >
+                        {quantity}
+                      </span>
+                      <span>
+                        <AiOutlinePlus
+                          className=" ml-auto border p-2 "
+                          onClick={() => setQuantity(quantity + 1)}
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            cursor: "pointer",
+                          }}
+                        />
+                      </span>
+                      <span className=" ml-3">
+                        <p
+                          className="p-1  mb-0 btn border-0 ADCT"
+                          onClick={() => addToCartfunc()}
+                        >
+                          <AiOutlineShoppingCart className="" /> &nbsp;Add to
+                          Cart
+                        </p>
+                      </span>
+                      <span>
+                        <Link
+                          to="/"
+                          className="ml-3 pl-2 pr-2  p-1 btn border-0 ADCT"
+                        >
+                          &nbsp;Shop
+                        </Link>
+                      </span>
+
+                      {/* <p className=" p-1 ADCT">
+                        <AiOutlineHeart />
+                      </p> */}
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 text-center p-2">
+            <h3 className="mb-3 text-primary">BEST SELLERS</h3>
+            <div className=" ml-1 p-4 card border-1 text-center">
+              <img src={Seller.image} class="img-fluid " alt="" />
+              <h5 className="text-danger">{Seller.price}</h5>
+              <h4 className="text-uppercase">{Seller.category}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container p-3 text-center align-items-center">
+        <div className="d-flex text-center mx-auto flex-direction-column justify-content-evenly text-uppercase">
+          <p className=" p-3 m-0 bgSocial">
+            <FaFacebookF className="" /> &nbsp;&nbsp;Share on Facebook
+          </p>
+          <p className="p-3 m-0 bgSocial2">
+            <AiOutlineTwitter />
+            &nbsp;&nbsp;Share on Twitter
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProductList;
+
+{
+  /* <div className="col">
                       <span>
                         <AiOutlineMinus
                           className=" ml-auto border p-2"
@@ -175,47 +259,18 @@ function ProductList() {
                         />
                       </span>
                     </div>
-                    <div className="col d-flex flex-direction-column align-items-center">
+                    <div className="col ">
                       <p
                         className="p-1 btn border-0 ADCT"
                         onClick={() => addToCartfunc()}
                       >
                         <AiOutlineShoppingCart /> &nbsp;Add to Cart
                       </p>
-                      <Link to="/" className=" mt-0 ml-2 p-1 btn border-0 ADCT">
+                      <Link to="/" className="  ml-2 p-1 btn border-0 ADCT">
                         &nbsp;Shop
                       </Link>
                       <p className="ml-2 p-1 ADCT">
                         <AiOutlineHeart />
                       </p>
-                    </div>
-                    {/* <div className="">
-                   <h1> {Seller.category}</h1>
-                    </div> */}
-                  </div>
-                  <hr />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3 text-left p-2">
-            <p className="mb-3">BEST SELLERS</p>
-          </div>
-        </div>
-      </div>
-      <div className="container p-3 text-center align-items-center">
-        <div className="d-flex text-center mx-auto flex-direction-column justify-content-evenly text-uppercase">
-          <p className=" p-3 m-0 bgSocial">
-            <FaFacebookF className="" /> &nbsp;&nbsp;Share on Facebook
-          </p>
-          <p className="p-3 m-0 bgSocial2">
-            <AiOutlineTwitter />
-            &nbsp;&nbsp;Share on Twitter
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+                    </div> */
 }
-
-export default ProductList;

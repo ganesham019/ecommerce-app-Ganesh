@@ -30,12 +30,7 @@ export const emptyCheckout = createAsyncThunk(
   }
 );
 
-export const totalValue = createAsyncThunk(
-  "cart/totalValue",
-  async () => {
-    return {result:"mani"};
-  }
-);
+
 
 
 
@@ -93,17 +88,9 @@ const cartSlice = createSlice({
     });
 
  
-    builder.addCase(totalValue.fulfilled, (state, action) => {
-      let total =0;
-      for(let val of state.cart){
-        total +=(val.price*val.count)
-      }
-           state.cartsummary.totalAmount=total;
-    });
+
   },
 });
 
 // export const { addTocart, testFunc } = cartSlice.actions;
-
-
 export default cartSlice.reducer;

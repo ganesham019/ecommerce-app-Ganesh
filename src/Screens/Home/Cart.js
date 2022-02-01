@@ -27,14 +27,13 @@ function Cart() {
   };
   return (
     <div className="container-fluid">
-    <div className="row">
-      <div className="col-sm-4">
-        {cart.length === 0 && <div>Cart is empty</div> }
+    <div className="row mt-4">
+      
+        {cart.length === 0 && <div className="text-center mx-auto"><h5 className="text-center mx-auto mt-5 mb-5 p-3">Cart is empty</h5></div> }
         {cart.map((data, index) => {
           return (
             <>
-              
-                <div class="">
+                <div class="col-sm-4">
                   <div
                     className=" p-2"
                     style={{ border: "1px solid lightgray" }}
@@ -44,7 +43,7 @@ function Cart() {
                       <img
                         src={data.image}
                         class="img-fluid "
-                        style={{ width: "120px", height: "150px" }}
+                        style={{ width: "100px", height: "120px" }}
                         alt=""
                       />{" "}
                     </div>
@@ -98,31 +97,23 @@ function Cart() {
                   </div>
                 </div>
          
-                
-              {data.count > 0 && (
-                <div className="justify-content-center text-center mx-auto">
-                  <Link to="/checkout">
-                    <p class="p-2 mt-3 btn btn-primary">Proceed To Buy</p>
-                  </Link>
-                  <span className="ml-4 ">
-                    <p
-                      className="btn btn-primary mt-3 p-2"
-                      onClick={() => {
-                        removeProduct(data.count, index);
-                      }}
-                    >
-                      Remove
-                    </p>
-                  </span>
-                </div>
-              )}
+             
               
             </>
           );
         })}
+           
+           {cart.length !== 0 && (
+                <div className="justify-content-center text-center mx-auto">
+                  <Link to="/checkout">
+                    <p class="p-2 mt-3 btn btn-danger">Proceed To Buy</p>
+                  </Link>
+                 
+                </div>
+              )}
       </div>
     </div>
-    </div>
+    
   );
 }
 
