@@ -17,10 +17,29 @@ export const deleteCartItem = createAsyncThunk(
     return data;
   }
 );
+export const deleteProduct = createAsyncThunk(
+  "cart/deleteProduct",
+  async (data) => {
+    return data;
+  }
+);
+export const emptyCheckout = createAsyncThunk(
+  "cart/emptyCheckout",
+  async (data) => {
+    return data;
+  }
+);
+
+export const totalValue = createAsyncThunk(
+  "cart/totalValue",
+  async () => {
+    return {result:"mani"};
+  }
+);
 
 
 
-const cartSclice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [],
@@ -32,16 +51,14 @@ const cartSclice = createSlice({
     },
   },
   reducer: {
-    addTocart: (state, action) => {
-      console.log(action.payload);
-    },
-    testFunc: (state, action) => {
-      console.log(state.cartsummary.itemCount);
-    },
+    // addTocart: (state, action) => {
+    //   console.log(action.payload);
+    // },
+    // testFunc: (state, action) => {
+    //   console.log(state.cartsummary.itemCount);
+    // },
   },
   extraReducers: (builder) => {
-
-
     builder.addCase(productAdd.fulfilled, (state, action) => {
       console.log(action.payload);
       state.cart.push({
@@ -53,10 +70,10 @@ const cartSclice = createSlice({
       });
       state.cartsummary.itemCount += action.payload.count;
     });
- 
 
     builder.addCase(modifyCartItemCount.fulfilled, (state, action) => {
       console.log(action.payload);
+      console.log(state.cart);
       let pre = action.payload.count - state.cart[action.payload.index].count;
       state.cart[action.payload.index].count = action.payload.count;
       state.cartsummary.itemCount += pre;
@@ -64,16 +81,32 @@ const cartSclice = createSlice({
 
     builder.addCase(deleteCartItem.fulfilled, (state, action) => {
       state.cart = state.cart.filter(
-        (element, index) => index < action.payload
-      );
+        (element, index) => index !== action.payload);
       state.cartsummary.itemCount -= 1;
+     
     });
 
-    
-  
+    builder.addCase(deleteProduct.fulfilled, (state, action) => {
+      state.cart = state.cart.filter(
+        (element, index) => index !== action.payload.index
+      );
+      state.cartsummary.itemCount -= action.payload.count;
+    });
+
+ 
+    builder.addCase(totalValue.fulfilled, (state, action) => {
+      let total =0;
+      for(let val of state.cart){
+        total +=(val.price*val.count)
+      }
+           state.cartsummary.totalAmount=total;
+    });
+
+
+
   },
 });
 
-export const { addTocart, testFunc } = cartSclice.actions;
+// export const { addTocart, testFunc } = cartSlice.actions;
 
-export default cartSclice.reducer;
+export default cartSlice.reducer;

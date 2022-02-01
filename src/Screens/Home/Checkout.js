@@ -1,22 +1,29 @@
-import React from "react";
-import { useSelector } from "react-redux";
-
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteProduct, totalValue } from "../../reduxToolkit/reducer/cart";
 
 function Checkout() {
+  useEffect(() => {
+    dispatch(totalValue());
+  }, []);
+
+  const dispatch = useDispatch();
 
   const cartStore = useSelector((state) => state.cart);
-  const { cart } = cartStore;
+  const { cart, cartsummary } = cartStore;
 
-  
+  const removeProduct = (count, index) => {
+    dispatch(deleteProduct({ count: count, index: index }));
+  };
 
   return (
     <>
+    {cart.length === 0 && <div className="text-danger mx-auto text-center">Check Out Page is Empty</div>}
       {cart.map((data, index) => {
         return (
           <>
             <div>
               <div class="container">
-                
                 <div class="col-sm-8 mx-auto text-center ">
                   <div className="row text-center">
                     <div className="col ">
@@ -42,10 +49,15 @@ function Checkout() {
                         {data.price}{" "}
                       </span>
                       <span>
-                        <h4 >Total Price</h4>
-                       
+                        <p
+                          className=" ml-5 btn btn-primary"
+                          onClick={() => {
+                            removeProduct(data.count, index);
+                          }}
+                        >
+                          Remove
+                        </p>
                       </span>
-                      
                     </div>
                   </div>
                 </div>
@@ -54,7 +66,12 @@ function Checkout() {
           </>
         );
       })}
-      console.log('')
+      <div className="text-center mx-auto">
+        <h5>
+          Total price is :{" "}
+          <span class="text-danger">{cartsummary.totalAmount}</span>
+        </h5>
+      </div>
     </>
   );
 }

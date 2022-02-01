@@ -11,9 +11,9 @@ function Header() {
   } = cartStore;
  
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light  text-center ">
-        <a class="navbar-brand text-center" href="#">
+    <div className=" sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light  text-center" >
+        <a className="navbar-brand text-center" href="#">
           <img
             src={Logo}
             class="img-fluid ml-auto text-center"

@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Star from "../../Images/Star.png";
+import { FaFacebookF } from "react-icons/fa";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
-  // AiFillFacebook,
-  // AiOutlineFacebook,
   AiOutlineShoppingCart,
   AiOutlineTwitter,
+  AiOutlineHeart,
 } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
+
 
 import { useDispatch } from "react-redux";
-// import { addCart } from "../../redux/action/index";
-import {  productAdd  } from "../../reduxToolkit/reducer/cart";
-function ProductList() {
-  // const urlPath = useLocation();
+import { productAdd } from "../../reduxToolkit/reducer/cart";
 
+function ProductList() {
   const [quantity, setQuantity] = useState(1);
 
   const decQuantity = () => {
@@ -35,19 +32,20 @@ function ProductList() {
 
   const dispatch = useDispatch();
 
-  // const addProduct = (Seller) =>{
-  //   dispatch(addCart(Seller));
-  // }
-
   useEffect(() => {
     getData();
   }, []);
 
   //dispatch function
   const addToCartfunc = () => {
-    //  dispatch(addTocart());
     dispatch(
-      productAdd({ pid: Seller.id, image: Seller.image, count: quantity, category: Seller.category ,  price:Seller.price})
+      productAdd({
+        pid: Seller.id,
+        image: Seller.image,
+        count: quantity,
+        category: Seller.category,
+        price: Seller.price,
+      })
     );
   };
 
@@ -91,7 +89,10 @@ function ProductList() {
                 </p>
                 <hr />
                 <p>Availability : &nbsp;&nbsp;&nbsp;&nbsp; In Stock </p>
-                <p>Categories : &nbsp;&nbsp;&nbsp;&nbsp; <b className="text-uppercase">{Seller.category}</b> </p>
+                <p>
+                  Categories : &nbsp;&nbsp;&nbsp;&nbsp;{" "}
+                  <b className="text-uppercase">{Seller.category}</b>{" "}
+                </p>
                 <p>FreeShipping </p>
                 <hr />
                 <div className="d-flex flex-direction-column ColorFlex">
