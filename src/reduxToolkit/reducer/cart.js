@@ -100,13 +100,10 @@ const cartSlice = createSlice({
       }
            state.cartsummary.totalAmount=total;
     });
-
-
-
   },
 });
 
 // export const { addTocart, testFunc } = cartSlice.actions;
 
-// export default cartSlice;
+
 export default cartSlice.reducer;
